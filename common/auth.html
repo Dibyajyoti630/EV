@@ -1,0 +1,48 @@
+<script type="module" src="/Assets/JavaScript/common/script.js"></script>
+<header></header>
+
+<section class="launcher load">
+    <img class="icon" src="/Assets/Images/logo.png" alt="e-Fill logo">
+</section>
+
+<article class="top-container">
+    <section class="bg-cover"></section>
+    <section class="wrapper"></section>
+</article>
+
+<article class="auth-container form-wrapper wrapper">
+    <h2 class="title form-heading placeholder">AUTH</h2>
+    <form class="auth-form" method="POST" autocomplete="on">
+        <input type="text" name="name" class="u-name" tabindex="1" placeholder="Full Name" autocomplete="name">
+        <input type="email" name="email" class="u-email" tabindex="1" placeholder="Email Address" autocomplete="email">
+        <select name="type" class="u-type" tabindex="1">
+            <option value="Bunk Manager">Bunk Manager</option>
+            <option value="Customer" selected>Customer</option>
+        </select>
+        <div class="pwd-wrapper">
+            <input type="password" name="password" class="u-password" tabindex="1" placeholder="Password"
+                autocomplete="current-password">
+            <label class="hint">Minimum 8 characters</label>
+            <span class="eye"></span>
+        </div>
+
+        <input type="submit" class="submit-btn" tabindex="1" value="Continue">
+        <div id="pop-up">
+            <h2 class="info success">
+                <span class="text"></span>
+                <img src="/Assets/Images/Icons/success.png" alt="success">
+            </h2>
+            <h2 class="info error">
+                <span class="text"></span>
+                <img src="/Assets/Images/Icons/error.png" alt="error">
+            </h2>
+        </div>
+    </form>
+    <p class="other-option"></p>
+
+</article>
+
+<article class="bg-cover-mob"></article>
+<footer></footer>
+
+<script type="module" src="/Assets/JavaScript/common/auth.js"></script>

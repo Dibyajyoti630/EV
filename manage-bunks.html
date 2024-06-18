@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manage EV Bunk Details | e-Fill</title>
+    <link rel="stylesheet" href="/Assets/CSS/common/fonts.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/styles.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/responsive.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/form.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/cards.css">
+    <link rel="stylesheet" href="/Assets/CSS/manage-bunks.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="find the nearest available electric vehicle charging stations">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="e-Fill - eco friendly fuels">
+    <meta property="og:description" content="find the nearest available electric vehicle charging stations">
+    <meta property="og:url" content="https://e-fill-by-kumara.web.app">
+    <meta property="og:site_name" content="e-Fill">
+    <meta property="og:image" content="/Assets/Images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Assets/Favicons/favicon-16x16.png">
+    <link rel="manifest" href="/Assets/Favicons/site.webmanifest">
+    <link rel="mask-icon" href="/Assets/Favicons/safari-pinned-tab.svg" color="#0a1a0c">
+    <link rel="shortcut icon" href="/Assets/Favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0a1a0c">
+    <meta name="msapplication-config" content="/Assets/Favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script type="module" src="/Assets/JavaScript/common/script.js"></script>
+    <script type="module" src="/Assets/JavaScript/manage-bunks.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <section class="launcher load">
+        <img class="icon" src="/Assets/Images/logo.png" alt="e-Fill logo">
+    </section>
+
+    <article class="top-container">
+        <section class="bg-cover"></section>
+        <section class="wrapper">
+            <div class="contents">
+                <h1 class="page-title">EV BUNK DETAILS</h1>
+            </div>
+        </section>
+    </article>
+
+    <article class="bunk-edit form-wrapper wrapper">
+        <form class="edit-form" method="POST" autocomplete="on">
+            <h2 class="title form-heading"><span class="grad-bg">ADD</span> Bunk</h2>
+            <input type="hidden" name="bunkid" class="b-id">
+            <input type="text" name="bunkname" class="b-name" tabindex="1" placeholder="Bunk Name">
+            <div class="details-content">
+                <input type="number" name="bunkslots" class="b-slots counter" tabindex="1" min="1"
+                    placeholder="Slots in total" inputmode="numeric">
+                <input type="number" name="bunkfreeslots" class="b-free-slots counter" tabindex="1" min="0"
+                    placeholder="Available Slots" inputmode="numeric">
+                <input type="tel" name="bunknumber" class="b-number" tabindex="1" placeholder="Contact Number"
+                    autocomplete="tel">
+                <input type="email" name="bunkemail" class="b-email" tabindex="1" placeholder="Email Address"
+                    autocomplete="email">
+                <div class="thumb xy-center" tabindex="1" title="Bunk Image">
+                    <input type="file" name="bunkimage" class="b-image" hidden title="Bunk Image">
+                    <input type="hidden" name="bunkimageid" class="b-image-id">
+                </div>
+            </div>
+            <textarea name="bunkaddress" class="b-address" tabindex="1" placeholder="Address"></textarea>
+            <div class="location">
+                <input type="text" name="bunkcity" class="b-city" tabindex="1" placeholder="City / Province">
+                <input type="text" name="bunkcountry" class="b-country" tabindex="1" placeholder="Country">
+            </div>
+            <a class="close-btn" tabindex="1">&times;</a>
+            <div class="form-buttons">
+                <input type="button" class="submit-btn edit" tabindex="1" value="Edit">
+                <input type="submit" class="submit-btn delete" tabindex="1" value="Delete">
+                <input type="submit" class="submit-btn save" tabindex="1" value="Save">
+            </div>
+            <div id="pop-up">
+                <h2 class="info success">
+                    <span class="text"></span>
+                    <img src="/Assets/Images/Icons/success.png" alt="success">
+                </h2>
+                <h2 class="info error">
+                    <span class="text"></span>
+                    <img src="/Assets/Images/Icons/error.png" alt="error">
+                </h2>
+            </div>
+        </form>
+    </article>
+
+    <section class="sub-title wrapper">
+        <h2 class="title">BUNKS <span class="grad-bg animate">OWNED</span></h2>
+        <div class="empty">
+            <p class="statement">No bunk data to show yet, why can't you add one?</p>
+            <img src="/Assets/Images/Icons/empty-box.png" alt="empty box">
+        </div>
+    </section>
+
+    <article class="bunks-preview cards-deck wrapper"></article>
+
+    <section class="loadmore-container wrapper">
+        <div class="spinner"></div>
+        <a class="show-more site-btn link-btn">Show More</a>
+        <p class="empty-info">No bunk data left to show</p>
+    </section>
+
+    <article class="bg-cover-mob"></article>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+.service-container {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    gap: 4em;
+    margin: 6em auto;
+}
+
+.service-container *:focus-visible {
+    outline-color: var(--lightseagreen);
+}
+
+/* --------------------- Suggestions Content | Styles ----------------------
+--------------------------------------------------------------------------- */
+
+.suggestions-content .navigation-wrapper,
+.suggestions-content .support-content {
+    padding: 3em 2em;
+    box-shadow: 0 0.5em 2em rgba(191, 191, 191, 0.4);
+    border-radius: 2em 0 0;
+}
+
+/* ---------- Suggestions (Link) | Styles --------- */
+
+.suggestions-content .link {
+    font-weight: 500;
+    justify-content: space-between;
+    gap: 1em;
+    background-color: var(--darkjunglegreen);
+    color: var(--white);
+    padding: 1.5em 1em 1.5em 1.5em;
+    border-radius: 1em;
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+}
+
+.suggestions-content .link.active,
+.suggestions-content .link:hover {
+    background-color: var(--mantis);
+}
+
+.suggestions-content .link::after {
+    content: "\2714";
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 50%;
+}
+
+.suggestions-content .link.active::after,
+.suggestions-content .link:not(.active):hover::after {
+    color: var(--lightseagreen);
+}
+
+/* ----------------- Suggestions Navigation | Styles ---------------- */
+
+.navigation-wrapper h2 {
+    margin: 0 0 1.5em;
+}
+
+.navigation-wrapper .navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* ----------------- Suggestions Support | Styles ---------------- */
+
+.suggestions-content .support-wrapper {
+    background: url("../../Images/thumbs/09.webp") no-repeat center/cover;
+    margin-top: 3em;
+    position: relative;
+}
+
+.suggestions-content .support-wrapper::before {
+    content: "";
+    background-color: rgba(120, 202, 91, 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.support-wrapper .support-content {
+    box-shadow: none;
+    position: relative;
+}
+
+.support-wrapper h2,
+.support-wrapper p,
+.support-wrapper .support-content .link::after {
+    color: var(--white);
+}
+
+.support-wrapper .link {
+    font-weight: 600;
+    background-color: var(--white);
+    color: var(--darkjunglegreen);
+    margin-top: 3em;
+}
+
+.support-wrapper .link:hover {
+    background-color: var(--darkjunglegreen);
+    color: var(--white);
+}
+
+.support-wrapper .link::after {
+    background-color: var(--darkjunglegreen);
+}
+
+.support-wrapper .link:hover::after {
+    background-color: var(--white);
+}
+
+.support-wrapper .support-content .link:not(:active):hover::after {
+    content: "\279C";
+    color: var(--darkjunglegreen);
+}
+
+.support-wrapper .link:active,
+.support-wrapper .link:active::after {
+    color: var(--lightseagreen);
+}
+
+/* ----------------------- Main Content | Styles -----------------------
+----------------------------------------------------------------------- */
+
+.main-content p {
+    line-height: 1.75em;
+}
+
+/* ----------------- Main-Image Preview | Styles ---------------- */
+
+.main-content .preview-thumb {
+    background: no-repeat center/cover;
+    width: 100%;
+    height: 35em;
+    margin: 3em 0;
+    box-shadow: 0 0 1em rgba(191, 191, 191, 0.2);
+    border-radius: 1.5em;
+    position: relative;
+}
+
+/* ---------- Play (Button) | Styles --------- */
+
+.preview-thumb .play-area {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition: background-color 0.5s ease-in-out;
+    position: absolute;
+}
+
+.preview-thumb:hover .play-area {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.preview-thumb .play-area .play-btn {
+    background-color: var(--white);
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    transition: background-color 0.25s ease-in-out;
+    animation: ripple-effect 3s infinite;
+    animation-delay: 0.9s;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.preview-thumb .play-area .play-btn::before,
+.preview-thumb .play-area .play-btn::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    animation: half-ripple-effect 3s infinite;
+    position: absolute;
+    z-index: -1;
+}
+
+.preview-thumb .play-area .play-btn::before {
+    animation-delay: 0.6s;
+}
+
+.preview-thumb .play-area .play-btn::after {
+    animation-delay: 0.4s;
+}
+
+.preview-thumb .play-area .play-btn:hover {
+    background-color: var(--mantis);
+}
+
+.preview-thumb .play-area .play-btn svg {
+    transition: fill 0.25s ease-in-out;
+}
+
+.preview-thumb .play-area .play-btn:hover svg {
+    fill: var(--white);
+}
+
+/* ---------------- Benefits (Badge) | Styles ------------------- */
+
+.main-content .benefits.even .service:nth-of-type(even) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* ---------------- Additional Features | Styles ---------------- */
+.main-content .features {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-auto-rows: 1fr;
+    gap: 1.5em;
+    margin: 3em 0;
+}
+
+.features .mini-thumb {
+    background: no-repeat center/cover;
+    max-width: 400px;
+    min-height: 250px;
+    box-shadow: 0 0 1em rgba(191, 191, 191, 0.2);
+    border-radius: 0.75em;
+}
+
+/* ------------------- Additional-Info Container | Styles -------------------
+----------------------------------------------------------------------- */
+.information-container {
+    background-color: var(--nickel);
+    color: var(--white);
+    padding: 3em 0;
+}
+
+.information-container .locate-charger {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    justify-content: space-between;
+}
+
+.locate-charger #search-box {
+    margin: 0;
+}
+
+.locate-charger #search-box:focus-within {
+    border: 0.2em solid var(--mantis);
+}
+
+.locate-charger .hint {
+    color: var(--lightseagreen);
+}
+
+.locate-charger #search-box .submit-btn:focus-within {
+    outline: 0.1em solid var(--mantis);
+}
+
+.locate-charger .support {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.8;
+    gap: 1em;
+}
+
+.locate-charger .support:hover {
+    opacity: 1;
+}
+
+.locate-charger .support:active {
+    transform: scale(0.96);
+}
+
+@media (min-width: 992px) and (max-width: 1260px) {
+    .service-container {
+        grid-template-columns: 0.4fr 0.6fr;
+        gap: 3.5em;
+    }
+
+    .main-content .preview-thumb {
+        height: 25em;
+    }
+
+    .main-content .features {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media (max-width: 991px) {
+    .service-container {
+        grid-template-columns: 1fr;
+        gap: 5em;
+    }
+
+    .suggestions-content {
+        grid-row: 2/3;
+    }
+
+    .suggestions-content .navigation-wrapper,
+    .suggestions-content .support-wrapper {
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .information-container .locate-charger {
+        grid-template-columns: 1fr;
+        grid-auto-flow: 1fr;
+        gap: 2em;
+    }
+
+    .locate-charger #search-box {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-content .preview-thumb {
+        height: 25em;
+    }
+
+    .main-content .features {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media (max-width: 554px) {
+    .main-content .preview-thumb {
+        height: 20em;
+    }
+
+    .features .mini-thumb {
+        max-width: 200px;
+        min-height: 150px;
+    }
+}

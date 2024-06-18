@@ -1,0 +1,103 @@
+/* ---------------- Cards-Deck | Styles --------------- */
+.cards-deck {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 6em auto 4em;
+}
+
+/* -------- Card | Styles -------- */
+
+.cards-deck .card {
+    background: no-repeat center/100% 100%;
+    border-radius: 0.5em;
+    transition: background-size 700ms ease-in-out;
+    position: relative;
+}
+
+.cards-deck .card::before,
+.cards-deck .card::after {
+    content: "";
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    position: absolute;
+}
+
+.cards-deck .card::after {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    height: 0;
+    transition: height 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+}
+
+.cards-deck .card:hover {
+    background-size: 110% 110%;
+}
+
+.cards-deck .card:hover::after {
+    height: 100%;
+}
+
+/* -------- Card-Description | Styles -------- */
+
+.cards-deck .details * {
+    color: var(--white);
+}
+
+.cards-deck .details {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5em;
+    width: 22.5em;
+    padding: 15em 1.5em 2em;
+    position: relative;
+    z-index: 1;
+}
+
+.cards-deck .details .thumb {
+    background: no-repeat center/70% var(--lightseagreen);
+    width: 4em;
+    height: 4em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+.cards-deck .details a {
+    display: block;
+    margin-top: 0.2em;
+    transition: 300ms;
+}
+
+@media (max-width: 1286px) {
+    .cards-deck .details {
+        gap: 1.25em;
+        width: 21em;
+        padding: 14em 1.5em 2em;
+    }
+}
+
+@media (max-width: 1205px) {
+    .cards-deck {
+        gap: 4em;
+    }
+
+    .cards-deck .details .thumb {
+        background-size: 65%;
+        width: 3.5em;
+        height: 3.5em;
+    }
+}
+
+@media (max-width: 442px) {
+    .cards-deck .details {
+        width: 20em;
+        padding: 12em 1.25em 1.75em;
+    }
+}

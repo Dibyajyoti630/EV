@@ -1,0 +1,105 @@
+/* ------- Benefits (Badge) | Styles ----- */
+
+.benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2vw;
+}
+
+.benefits .service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.benefits .badge {
+    background: no-repeat center/3.5em;
+    background-color: var(--darkjunglegreen);
+    width: 12em;
+    height: 5em;
+    border-radius: 0.5em;
+}
+
+.benefits .service:nth-of-type(even) .badge {
+    background-color: var(--mantis);
+}
+
+.benefits .service:hover .badge {
+    animation: float-up-down 2s infinite;
+    box-shadow: 0 0 3em rgba(10, 26, 12, 0.3);
+    transition: animation 1s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.benefits .badge.energy {
+    background-image: url("../../Images/Icons/energy-saving.png");
+}
+
+.benefits .badge.connect {
+    background-image: url("../../Images/Icons/ev-station.png");
+}
+
+.benefits .badge.charging {
+    background-image: url("../../Images/Icons/fast-charging.png");
+}
+
+.benefits .badge.locate {
+    background-image: url("../../Images/Icons/ev-location.png");
+}
+
+.benefits .badge.flexible {
+    background-image: url("../../Images/Icons/ev-service_01.png");
+}
+
+.benefits .badge.reliable {
+    background-image: url("../../Images/Icons/ev-service_02.png");
+}
+
+.benefits .badge.pricing {
+    background-image: url("../../Images/Icons/ev-service_03.png");
+}
+
+.benefits .badge.non-stop {
+    background-image: url("../../Images/Icons/ev-service_04.png");
+}
+
+.benefits .badge.big {
+    background-size: 4em;
+}
+
+@media (min-width: 992px) and (max-width: 1260px) {
+    .benefits {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    article .benefits.service-badge {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .benefits {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    @media (min-width: 554px) {
+        .benefits .badge {
+            width: 8em;
+        }
+    }
+
+    .benefits .service h3 {
+        font-size: 1em;
+    }
+}

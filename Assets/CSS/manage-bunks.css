@@ -1,0 +1,405 @@
+.title,
+.sub-title {
+    text-align: center;
+}
+
+.top-container {
+    background-image: url("../Images/backgrounds/manage_00.webp");
+}
+
+.form-wrapper form {
+    margin: 6em 0 2.5em;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
+    position: static;
+}
+
+.form-wrapper input {
+    width: 100%;
+}
+
+.form-wrapper input,
+.form-wrapper select,
+.form-wrapper textarea {
+    border-bottom: 0.05em solid transparent;
+}
+
+#pop-up {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ---------------- Bunk-Edit Container | Styles --------------- */
+
+.bunk-edit .title {
+    margin-top: 0;
+}
+
+.bunk-edit .details-content {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2.5em;
+}
+
+.bunk-edit .location {
+    display: flex;
+    gap: 2.5em;
+}
+
+.details-content input.counter {
+    background-image: url("../Images/Icons/numbers.png");
+    background-size: 2em;
+}
+
+.details-content input.counter:read-only {
+    background-image: none;
+}
+
+/* -------- New-Bunk (Image) | Styles ------- */
+
+.details-content .thumb {
+    grid-column: 2/3;
+    grid-row: 1/5;
+    background: no-repeat center/cover;
+    width: 100%;
+    height: 100%;
+    border: 0.1em solid var(--silver);
+    border-radius: 0.75em;
+    position: relative;
+}
+
+.details-content .thumb::before {
+    font-size: 2.5em;
+    background-color: var(--mantis);
+    color: var(--white);
+    padding: 5px 20px;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+.edit-form:not(.preview) .details-content .thumb:hover,
+.edit-form:not(.preview) .details-content .thumb:focus-visible {
+    background-color: rgba(120, 202, 91, 0.02);
+    box-shadow: 0 0 2em rgba(120, 202, 91, 0.2);
+    border-color: var(--mantis);
+}
+
+.edit-form:not(.preview) .details-content .thumb:hover::before,
+.edit-form:not(.preview) .details-content .thumb:focus-visible::before {
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.edit-form:not(.preview) .details-content .thumb.empty:focus {
+    border-color: var(--fieryrose);
+}
+
+.details-content .thumb .b-image {
+    display: none;
+    z-index: -1;
+}
+
+/* -------- Form (Button) | Styles ------- */
+
+.bunk-edit .form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-buttons input.submit-btn {
+    padding: 1em 2em;
+}
+
+.form-buttons input.submit-btn.save {
+    margin: 1em 0 1em auto;
+}
+
+.form-buttons input.submit-btn:not(.save) {
+    background-image: none;
+    margin: 1em 0;
+}
+
+.form-buttons input.submit-btn:not(.save):active {
+    background-image: none;
+}
+
+.form-buttons .submit-btn.edit {
+    background-color: var(--lightseagreen);
+}
+
+.form-buttons .submit-btn.edit:focus-visible {
+    outline-color: var(--mantis);
+}
+
+.form-buttons .submit-btn.delete {
+    background-color: var(--fieryrose);
+}
+
+.edit-form:not(.preview) .submit-btn:not(.save),
+.edit-form.preview .submit-btn.save {
+    display: none;
+}
+
+a.close-btn {
+    color: var(--darkjunglegreen);
+    outline-width: 0.05em;
+    border-radius: inherit;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* -------- Bunk (Preview) Mode | Styles ------- */
+
+.edit-form.preview input:not([type=button]):not([type=submit]),
+.edit-form.preview select,
+.edit-form.preview textarea {
+    background-color: var(--white);
+    outline: none;
+    border-bottom-color: var(--mantis);
+    cursor: default;
+}
+
+.edit-form.preview textarea {
+    resize: none;
+}
+
+.edit-form:not(.preview) .details-content .thumb {
+    cursor: pointer;
+}
+
+.edit-form:not(.preview) .details-content .thumb::before {
+    content: "+";
+}
+
+.edit-form:not(.preview) .close-btn {
+    display: none;
+}
+
+/* ---------------- Bunk-Preview Container | Styles --------------- */
+.sub-title {
+    margin-bottom: 5em;
+}
+
+.sub-title .title {
+    margin: 2em 0 0;
+}
+
+.sub-title .empty {
+    display: none;
+}
+
+.sub-title .empty.show {
+    display: block;
+}
+
+.sub-title img {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+/* -------- Bunks-Info (Card) | Styles -------- */
+.bunks-preview {
+    gap: 4em 2em;
+}
+
+.bunks-preview.hide {
+    display: none;
+}
+
+.bunks-preview .card {
+    width: 25vw;
+    max-width: 380px;
+    padding: 1em;
+    box-shadow: 0 0 2em rgba(108, 118, 109, 0.2);
+    cursor: default;
+}
+
+.cards-deck .card::before,
+.cards-deck .card::after {
+    bottom: 0;
+    left: 0;
+}
+
+.cards-deck .card::before {
+    color: rgba(10, 26, 12);
+    background-image: linear-gradient(to bottom, transparent, rgba(10, 26, 12, 0.5));
+}
+
+.cards-deck .card::after {
+    background-image: linear-gradient(to bottom, rgba(10, 26, 12, 0.3), rgba(10, 26, 12, 0.6));
+}
+
+.cards-deck .card.preview::before {
+    background-image: linear-gradient(to bottom, transparent, rgba(120, 202, 91, 0.7));
+}
+
+.cards-deck .card.preview::after {
+    background-image: linear-gradient(to bottom, rgba(120, 202, 91, 0.5), rgba(120, 202, 91, 0.8));
+}
+
+.bunks-preview .card h2 {
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.bunks-preview .card .overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90%;
+}
+
+.bunks-preview .card .thumb {
+    background: no-repeat center/cover rgba(232, 247, 246, 0.8);
+    width: 100%;
+    height: 15em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    position: relative;
+    z-index: 2;
+    background-image: url("../Images/thumbs/10.webp");
+}
+
+/* -------- Card-Description | Styles -------- */
+
+.bunks-preview .card .details {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+.bunks-preview .details .slash {
+    color: var(--silver);
+    margin: 0 0.2em;
+}
+
+.bunks-preview .card:hover .slots .available {
+    color: var(--mantis);
+}
+
+.bunks-preview .card:hover .details .slash {
+    color: var(--nickel);
+}
+
+.bunks-preview .card.preview:hover .slots .available {
+    color: var(--darkjunglegreen);
+}
+
+/* ------ Load-More Container | Styles ------ */
+.loadmore-container {
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.loadmore-container :not(.show) {
+    display: none;
+}
+
+.loadmore-container a.show-more {
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.loadmore-container .empty-info {
+    margin: 1em 0;
+}
+
+@media (min-width: 849px) and (max-width: 1346px) {
+    .bunk-edit .details-content {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .bunks-preview .card {
+        width: 23em;
+    }
+
+    @media (max-width: 1313px) {
+        .bunks-preview {
+            column-gap: 4em;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .bunk-edit form,
+    .bunk-edit .details-content,
+    .bunk-edit .location {
+        gap: 2em;
+    }
+
+    .bunk-edit .details-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-content .thumb {
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+
+    .details-content .b-email {
+        grid-column: 1/3;
+    }
+}
+
+@media (max-width: 767px) {
+    .details-content .thumb::before {
+        font-size: 2em;
+        padding: 4px 15px;
+    }
+
+    @media (min-width: 551px) {
+        .bunk-edit .details-content {
+            row-gap: 0;
+        }
+
+        .details-content input:not(.b-slots) {
+            margin-top: 2em;
+        }
+
+        .details-content .b-number {
+            grid-column: 1/3;
+        }
+    }
+}
+
+@media (max-width: 848px) {
+    .bunks-preview .card {
+        width: 26em;
+    }
+
+    @media (max-width: 767px) {
+        .sub-title img {
+            width: 128px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .bunk-edit .details-content {
+        grid-template-columns: 1fr;
+    }
+
+    .details-content .thumb {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        height: 100pt;
+    }
+
+    .details-content input,
+    .details-content .b-email {
+        grid-column: 1/2;
+    }
+
+    .bunk-edit .location {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .bunks-preview .card {
+        width: 100%;
+    }
+}

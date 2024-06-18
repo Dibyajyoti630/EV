@@ -1,0 +1,95 @@
+.auth-container {
+    margin: 4em auto;
+}
+
+.auth-container .form-heading {
+    text-align: center;
+}
+
+.auth-container.form-wrapper form {
+    gap: 3.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 2.5em auto 0;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.form-wrapper form::before {
+    content: "";
+    background: url("../../Images/thumbs/16.webp") no-repeat center/cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.form-wrapper input,
+.form-wrapper select,
+.form-wrapper textarea {
+    background-color: var(--white);
+}
+
+.form-wrapper form select {
+    background-size: 5%;
+}
+
+.form-wrapper input.submit-btn {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.75em 1.25em;
+}
+
+/* ----- ShowPassword (Icon) | Styles ----- */
+.form-wrapper .pwd-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.pwd-wrapper .eye {
+    background: url("../../Images/Icons/eye.png") no-repeat center/50%;
+    color: var(--lightseagreen);
+    width: 3em;
+    height: 80%;
+    padding: 0 0.2em;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.pwd-wrapper .eye:hover {
+    background-color: var(--azurex11webcolor);
+}
+
+.pwd-wrapper:active .u-password {
+    outline: 0.2em solid var(--mantis);
+}
+
+.pwd-wrapper .eye:active {
+    background-size: 45%;
+}
+
+.pwd-wrapper .u-password {
+    width: 100%;
+}
+
+/* ------ Other-Options | Styles ------ */
+.form-wrapper .other-option {
+    text-align: right;
+    max-width: 600px;
+    margin: 3em auto 2em;
+}
+
+.form-wrapper .other-option .link {
+    color: var(--lightseagreen);
+}
+
+.form-wrapper .other-option .link:hover {
+    text-decoration: solid underline var(--lightseagreen) 0.1em;
+}

@@ -1,0 +1,177 @@
+/* ------------------ 2D Movements in X,Y axis ---------------- */
+@keyframes slide-right-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-left-in {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes tilt-clock-10 {
+    90% {
+        transform: translateX(10%) rotate(10deg);
+    }
+}
+
+@keyframes slide-up-in {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes float-up-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes width-equalizer {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+/* ---------- Marquee Scroll Animations ----------- */
+@keyframes marquee-scroller {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-15em * 14));
+    }
+}
+
+@keyframes marquee-scroller-mobile {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-10em * 14));
+    }
+}
+
+/* ------------------ 2D Rotations in X,Y axis ---------------- */
+@keyframes rotate-X-clock {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes rotate-clock {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ------------------ Visual Animations ---------------- */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ripple-effect {
+    0% {
+        box-shadow: none;
+    }
+
+    60% {
+        box-shadow: 0 0 0 3.8em rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    }
+}
+
+@keyframes half-ripple-effect {
+    0% {
+        box-shadow: none;
+    }
+
+    60% {
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    }
+}
+
+@keyframes shake-x {
+    0% {
+        transform: translateX(5px);
+    }
+
+    30% {
+        transform: translateX(0);
+    }
+
+    70% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes linear-color-changer {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}

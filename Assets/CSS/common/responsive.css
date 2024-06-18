@@ -1,0 +1,574 @@
+/* --------------------- (Responsive) Web Page | Styles -----------------------
+------------------------------------------------------------------------ */
+
+@media (min-width: 992px) and (max-width: 1190px) {
+
+    /*  Responsive Styles for
+            - Small Desktops and 
+            - Tablets
+    */
+
+    h2.title {
+        font-size: 3.5em;
+    }
+
+    /* ---------------- Top-Container | Styles ---------------- */
+
+    .top-container h1 {
+        font-size: 4.25em;
+    }
+
+    /* ------------- Stats-Container | Styles ------------ */
+
+    .stats-content .badge {
+        padding: 0 2.5em;
+    }
+
+    /* -------------- Mission-Container | Styles ------------ */
+    .about-container .mission-content {
+        padding: 7.5em 0;
+    }
+
+    .mission-content .first-child,
+    .mission-content .inner-child,
+    .mission-content .second-child {
+        gap: 1.5em;
+    }
+
+    .mission-content img {
+        width: 20em;
+        height: 25em;
+    }
+
+    .mission-content .inner-child {
+        gap: 0;
+    }
+
+    .site-btn {
+        margin: 1.5em 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /*  Responsive Styles for
+            - Tablets and
+            - Small Tablets
+    */
+
+    body {
+        font-size: 0.85em;
+    }
+
+    h2.title {
+        font-size: 3em;
+    }
+
+    p.statement {
+        font-size: 0.95em;
+    }
+
+    .logo .icon {
+        width: 4.25em;
+    }
+
+    /* ---------------- Top-Container | Styles ---------------- */
+
+    .top-container .contents {
+        width: 80vw;
+    }
+
+    .top-container h1 {
+        font-size: 4em;
+    }
+
+    /* --------- Search-Box | Styles -------- */
+    #search-box input {
+        font-size: 1em;
+    }
+
+    #search-box .search-bar {
+        letter-spacing: 0.075em;
+    }
+
+    /* ------------- Stats-Container | Styles ------------ */
+
+    .stats-content .badge {
+        gap: 0.25em;
+        padding: 0 2em;
+    }
+
+    .stats-content .badge p {
+        font-size: 0.85em;
+    }
+
+    /* -------------- Mission-Container | Styles ------------ */
+
+    .mission-content .first-child,
+    .mission-content .inner-child,
+    .mission-content .second-child {
+        gap: 1em;
+    }
+
+    .mission-content .title {
+        margin-bottom: 0.25em;
+    }
+
+    .mission-content img {
+        width: 15em;
+        height: 20em;
+    }
+
+    .mission-content .inner-child {
+        gap: 0;
+    }
+
+    .site-btn {
+        margin: 1em 0;
+        padding: 0.75em 2em;
+    }
+
+    /* ---------------- Discover-Container | Styles ---------------- */
+
+    .discover-container .inner-child {
+        padding: 5em 0;
+    }
+
+    .discover-container .inner-child .contents {
+        width: 65vw;
+    }
+
+    /* ---------------- Contact-Container | Styles ---------------- */
+
+    .contact-container .bg-cover.right img {
+        width: 12.5em;
+    }
+
+    .contact-container .contact-content {
+        width: 75vw;
+    }
+
+    .contact-content .title {
+        font-size: 2em;
+    }
+
+    /* -------------- Footer | Styles -------------- */
+
+    footer {
+        padding: 1.5em 0;
+    }
+
+    /* --- Footer-Logo | Styles --- */
+    footer .infos .bottominfo-links,
+    footer .infos h3 {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    footer .infos .bottominfo-links {
+        grid-column: 1/5;
+        margin-bottom: 0;
+    }
+
+    footer .infos p {
+        font-size: 0.9em;
+    }
+
+    /* -- Social-link | Styles -- */
+    footer .infos .social-links img {
+        width: 1.15em;
+    }
+
+    /* --- Footer-Links | Styles --- */
+    footer .infos .related-links {
+        width: 100%;
+    }
+
+    footer .infos .related-links:last-of-type {
+        width: -moz-fit-content;
+        width: fit-content;
+        grid-column: 3/5;
+    }
+
+    footer .infos .related-links h3 {
+        font-size: 1.1em;
+    }
+
+    footer .infos .related-links a {
+        font-size: 0.95em;
+        margin-top: 0.4em;
+    }
+
+    /* --------------------- Media (Player) | Styles ---------------------- */
+    .media-player .media {
+        gap: 0.75em;
+        width: 50em;
+        height: 25em;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /*  Responsive Styles for
+            - Small Tablets and
+            - Mobiles
+    */
+
+    body {
+        font-size: 0.85em;
+    }
+
+    h2.title {
+        font-size: 2.5em;
+    }
+
+    p.statement {
+        font-size: 0.9em;
+    }
+
+    .logo .icon {
+        width: 4.25em;
+    }
+
+    .line-break {
+        display: none;
+    }
+
+    header {
+        background-color: var(--white);
+        box-shadow: 0 1em 3em rgba(0, 0, 0, 0.1);
+    }
+
+    /* ------ Navigation Links (Mobile) ------ */
+    .menu-bar .page-title-mob {
+        display: flex;
+    }
+
+    .menu-bar .page-title-mob.show+.nav-links {
+        display: flex;
+        animation: slide-up-in 0.5s both, fade-in 0.5s both;
+    }
+
+    /* ------ Navigation Links ------ */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--white);
+        opacity: 0;
+        padding: 2em 1em 1em;
+        box-shadow: 0 2em 2em rgba(10, 26, 12, 0.2);
+        border-top: 0.1em solid var(--mantis);
+        border-radius: 0 0 1em 1em;
+        position: absolute;
+        top: 95%;
+        left: 0;
+        right: 0;
+    }
+
+    body:not(.home) .nav-links>.link {
+        color: var(--nickel);
+    }
+
+    header .menu-bar .nav-links .link.active {
+        transform: none;
+    }
+
+    /* -------- Dropdown | Styles --------- */
+    .nav-links .dropdown {
+        width: 100%;
+        position: static;
+    }
+
+    .nav-links .dropdown .dropdown-box {
+        background-color: rgba(191, 191, 191, 0.2);
+        width: 100%;
+        margin-top: 1em;
+        padding: 1em;
+        box-sizing: border-box;
+        box-shadow: none;
+    }
+
+    .nav-links .dropdown .dropdown-box.show {
+        position: static;
+    }
+
+    /* ---------------- Top-Container | Styles ---------------- */
+    .top-container .wrapper {
+        padding: 8em 0 6em;
+    }
+
+    .top-container .contents {
+        width: 100%;
+    }
+
+    .top-container h1 {
+        font-size: 3em;
+    }
+
+    .top-container .contents p {
+        width: 100%;
+    }
+
+    /* --------- Search-Box | Styles -------- */
+    #search-box {
+        width: 90%;
+        margin: 2.5em 0;
+        padding: 0.25em;
+    }
+
+    #search-box input {
+        font-size: 1em;
+    }
+
+    #search-box .search-bar {
+        letter-spacing: 0.075em;
+    }
+
+    #search-box .submit-btn {
+        padding: 0.85em 1.75em;
+        border-radius: 0.3em;
+    }
+
+    /* ------------- Stats-Container | Styles ------------ */
+    .about-container .stats-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about-container .stats-content::before {
+        padding: 15em 0 12em;
+    }
+
+    .stats-content .badge {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        width: 40vw;
+        margin: 0 auto;
+        padding: 0 1.5em;
+    }
+
+    .stats-content .badge .title {
+        margin-bottom: 0;
+    }
+
+    .stats-content .badge p {
+        font-size: 0.85em;
+        text-align: center;
+    }
+
+    /* -------------- Mission-Container | Styles ------------ */
+    .about-container .mission-content {
+        padding: 8em 0 6em;
+    }
+
+    .mission-content .first-child,
+    .mission-content .inner-child,
+    .mission-content .second-child {
+        gap: 1em;
+    }
+
+    .mission-content .second-child {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mission-content img {
+        width: 10em;
+        height: 15em;
+    }
+
+    .mission-content .title {
+        margin-bottom: 0.25em;
+    }
+
+    .mission-content .inner-child {
+        gap: 0;
+    }
+
+    .site-btn {
+        margin: 0.5em 0;
+        padding: 0.65em 1.65em;
+    }
+
+    /* ---------------- Discover-Container | Styles ---------------- */
+
+    .discover-container .inner-child {
+        padding: 4em 0;
+    }
+
+    .discover-container .inner-child .contents {
+        width: 100%;
+    }
+
+    .discover-container .inner-child .statement {
+        width: 90%;
+    }
+
+    /* ------------ Marquee-Infinite (Scrolling) | Styles --------- */
+    .brands-slider .marquee-badges {
+        width: calc(10em * 26);
+        animation: marquee-scroller-mobile 26s linear infinite;
+    }
+
+    .brands-slider .marquee-badges img {
+        width: 10em;
+    }
+
+    /* ---------------- Contact-Container | Styles ---------------- */
+    .contact-container {
+        margin-bottom: 6em;
+    }
+
+    .contact-container .bg-cover.right img {
+        width: 10em;
+    }
+
+    .contact-container .contact-content {
+        width: 100%;
+        margin: 0;
+        padding: 2.5em 3em;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-content .title {
+        font-size: 1.75em;
+    }
+
+    /* -------------- Footer | Styles -------------- */
+
+    footer {
+        padding: 1.5em 0;
+    }
+
+    /* --- Footer-Logo | Styles --- */
+    footer .infos .bottominfo-links,
+    footer .infos h3 {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    footer .infos .bottominfo-links {
+        grid-column: 1/5;
+        margin-bottom: 0;
+    }
+
+    footer .infos p {
+        font-size: 0.85em;
+    }
+
+    /* -- Social-link | Styles -- */
+    footer .infos .social-links {
+        margin-bottom: 1em;
+    }
+
+    footer .infos .social-links img {
+        width: 1.1em;
+    }
+
+    /* --- Footer-Links | Styles --- */
+    footer .infos .related-links {
+        width: 100%;
+    }
+
+    footer .infos .related-links:last-of-type {
+        width: -moz-fit-content;
+        width: fit-content;
+        grid-column: 3/5;
+    }
+
+    footer .infos .related-links h3 {
+        font-size: 1.em;
+    }
+
+    footer .infos .related-links a {
+        font-size: 0.9em;
+        margin-top: 0.3em;
+    }
+
+    /* --- Footer-copyrights | Styles --- */
+    footer .copyrights small {
+        font-size: 0.75em;
+    }
+
+    /* --------------------- Media (Player) | Styles ---------------------- */
+    .media-player .media {
+        gap: 0.25em;
+        width: 38em;
+        height: 19em;
+    }
+
+    .close-btn {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 554px) {
+
+    /* -------------- Footer | Styles -------------- */
+    footer .infos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* --- Footer-Logo | Styles --- */
+
+    footer .infos .related-links,
+    footer .infos .related-links:last-of-type {
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: 0;
+        padding: 0 1em;
+    }
+
+    footer .infos .bottominfo-links {
+        margin-bottom: 1em;
+    }
+
+    /* --- Footer-Links | Styles --- */
+    footer .infos .related-links h3 {
+        font-size: 0.95em;
+    }
+
+    footer .infos .related-links a {
+        font-size: 0.85em;
+        margin-top: 0.2em;
+    }
+
+    /* --- Footer-copyrights | Styles --- */
+    footer .copyrights {
+        margin-top: 1.5em;
+    }
+
+    /* --------------------- Media (Player) | Styles ---------------------- */
+    .media-player .media {
+        gap: 0.1em;
+        width: 26em;
+        height: 13em;
+    }
+}
+
+@media (max-width: 442px) {
+    .logo .icon {
+        width: 4em;
+    }
+
+    .menu-bar .page-title-mob {
+        font-size: 1.55em;
+    }
+
+    /* -------------- Mission-Container | Styles ------------ */
+    .mission-content .first-child .thumb-img1 {
+        display: none;
+    }
+
+    /* --------------------- Media (Player) | Styles ---------------------- */
+    .media-player .media {
+        width: 24em;
+        height: 12em;
+    }
+}

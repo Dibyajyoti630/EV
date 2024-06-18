@@ -1,0 +1,182 @@
+body {
+    overflow-x: hidden;
+}
+
+.top-container {
+    background-image: url("../Images/backgrounds/about_00.webp");
+}
+
+/* -------------- About-Container (Intro) | Styles ------------ */
+.about-container .intro-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    gap: 2em;
+    overflow: hidden;
+    padding: 6em 0 15em;
+}
+
+/* ----- Intro (Image & Quote) | Styles ---- */
+.intro-content .img-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    position: relative;
+}
+
+.intro-content img {
+    width: 32em;
+    height: 25em;
+    border-radius: 2em;
+}
+
+.intro-content .img-contain .note {
+    content: "";
+    background-color: var(--white);
+    width: 80%;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: -30%;
+}
+
+.intro-content .img-contain .note.animate {
+    animation: slide-right-in 1s both;
+}
+
+.intro-content .img-contain .note .text {
+    display: inline-block;
+    color: var(--nickel);
+    margin-bottom: 1.5em;
+    padding-left: 1em;
+    border-left: 0.15em solid var(--mantis);
+}
+
+.intro-content .img-contain .note .author {
+    font-weight: 500;
+}
+
+/* ------- Intro (Benefits & Offerings) | Styles ----- */
+.intro-content .title {
+    margin-bottom: 0.25em;
+}
+
+.intro-content .benefits {
+    grid-template-columns: 1fr 1fr;
+}
+
+.intro-content .benefits .badge {
+    min-width: 65px;
+}
+
+.intro-content .benefits:nth-of-type(even) .service:nth-of-type(even) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* ---------------- Discover-Container | Styles ---------------- */
+
+.discover-container {
+    background-color: var(--darkjunglegreen);
+}
+
+.discover-container .inner-child {
+    position: relative;
+}
+
+.discover-container .mission-vision {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap: 6%;
+}
+
+.discover-container .mission-vision .sub-title {
+    color: var(--silver);
+}
+
+.discover-container .mission-vision img {
+    width: 4em;
+}
+
+.discover-container .bg-cover.image {
+    background-image: url("../Images/thumbs/04/w1080.webp");
+    width: 40%;
+    border-radius: 1.5em 0 0 1.5em;
+    z-index: 1;
+    top: -5em;
+    right: -10%;
+}
+
+.discover-container .bg-cover.image.animate {
+    animation: slide-left-in 1s both, fade-in 1s both;
+}
+
+@media (min-width: 2400px) {
+    .discover-container .bg-cover.image {
+        background-image: url("../Images/thumbs/04/w2400.webp");
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1320px) {
+    .intro-content .benefits {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    @media (max-width: 1190px) {
+        .about-container .intro-content {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .intro-content img {
+            width: 28em;
+            height: 21em;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .about-container .intro-content {
+        grid-template-columns: 100%;
+        grid-template-rows: max-content;
+        gap: 10em;
+        padding: 8em 0;
+    }
+
+    .discover-container {
+        background-color: rgba(10, 26, 12, 0.9);
+    }
+
+    .discover-container .inner-child {
+        background-color: transparent;
+        width: 80vw;
+        margin: 0 auto;
+        padding-left: 0;
+        position: static;
+    }
+
+    .discover-container .bg-cover.image {
+        width: 100%;
+        border-radius: 0;
+        z-index: -1;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 554px) {
+    .discover-container .bg-cover.image {
+        background-image: url("../Images/thumbs/04/w640.webp");
+    }
+
+    .intro-content img {
+        width: 28em;
+        height: 21em;
+    }
+}

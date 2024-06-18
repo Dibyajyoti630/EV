@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile | e-Fill</title>
+    <link rel="stylesheet" href="/Assets/CSS/common/fonts.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/styles.css">
+    <link rel="stylesheet" href="/Assets/CSS/common/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="find the nearest available electric vehicle charging stations">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="e-Fill - eco friendly fuels">
+    <meta property="og:description" content="find the nearest available electric vehicle charging stations">
+    <meta property="og:url" content="https://e-fill-by-kumara.web.app">
+    <meta property="og:site_name" content="e-Fill">
+    <meta property="og:image" content="/Assets/Images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Assets/Favicons/favicon-16x16.png">
+    <link rel="manifest" href="/Assets/Favicons/site.webmanifest">
+    <link rel="mask-icon" href="/Assets/Favicons/safari-pinned-tab.svg" color="#0a1a0c">
+    <link rel="shortcut icon" href="/Assets/Favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0a1a0c">
+    <meta name="msapplication-config" content="/Assets/Favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script type="module" src="/Assets/JavaScript/common/script.js"></script>
+    <script type="module" src="/Assets/JavaScript/profile.js"></script>
+    <style>
+        .profile-container {
+            text-align: center;
+            background-color: var(--white);
+            margin: 5em auto;
+            padding: 2em;
+            box-shadow: 0 0 2em rgba(10, 26, 12, 0.2);
+            border-radius: 1em;
+        }
+
+        .profile-container div:not(.show) {
+            opacity: 0;
+        }
+
+        .full-name {
+            font-size: 3em;
+            margin-bottom: 1em;
+        }
+
+        .email {
+            font-size: 1.25em;
+            font-weight: 500;
+            color: var(--lightseagreen)
+        }
+
+        .account-type {
+            font-size: 1.05em;
+            font-weight: 500;
+            background-color: var(--lightseagreen);
+            color: var(--white);
+            padding: 0.1em 0.2em;
+            border-radius: 0.2em;
+        }
+
+        @media (max-width: 550px) {
+            h2.title {
+                font-size: 1.5em;
+            }
+
+            .full-name {
+                font-size: 2em;
+                margin-bottom: 0.5em;
+            }
+
+            .email {
+                font-size: 1.15em;
+            }
+
+            p {
+                line-height: 2em;
+            }
+
+            .account-type {
+                font-size: 1em;
+                padding: 0.05em 0.1em;
+                border-radius: 0.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <section class="launcher load">
+        <img class="icon" src="/Assets/Images/logo.png" alt="e-Fill logo">
+    </section>
+
+    <article class="top-container">
+        <section class="bg-cover"></section>
+        <section class="wrapper"></section>
+    </article>
+
+    <article class="profile-container wrapper">
+        <h2 class="title"><span class="grad-bg">WELCOME!</span></h2>
+        <div class="spinner show"></div>
+        <div class="credential">
+            <h1 class="full-name"></h1>
+            <p>logged with <span class="email"></span> as <span class="account-type"></span></p>
+        </div>
+    </article>
+
+    <article class="bg-cover-mob"></article>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,926 @@
+@import url("./animation.css");
+
+/* --------------------------- Global | Styles ------------------------------
+------------------------------------------------------------------------ */
+
+:root {
+    --azurex11webcolor: #E8F7F6;
+    --black: #000;
+    --darkjunglegreen: #0A1A0C;
+    --fieryrose: #FD4F66;
+    --lightseagreen: #12B8AE;
+    --mantis: #78CA5B;
+    --nickel: #6C766D;
+    --silver: #BFBFBF;
+    --violetred: #FD5090;
+    --white: #FFF;
+    --gradient1: linear-gradient(-130deg, var(--mantis) 50%, var(--lightseagreen));
+    --gradient2: linear-gradient(130deg, var(--mantis) 50%, var(--lightseagreen));
+    --image-placeholder: none;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9em;
+    color: var(--darkjunglegreen);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not([href]) {
+    cursor: default;
+}
+
+h1,
+h2 {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+h2.title {
+    font-size: 4em;
+}
+
+p {
+    color: var(--nickel);
+}
+
+*:focus-visible {
+    outline: 0.2em solid var(--mantis);
+}
+
+.green {
+    color: var(--mantis);
+}
+
+.wrapper {
+    width: 80vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.placeholder {
+    color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.logo .icon {
+    width: 4.5em;
+}
+
+.sym {
+    display: inline-block;
+    transform: translateY(-10%) rotateX(60deg) scale(1.7);
+    transition: transform 0.5s ease-in-out;
+}
+
+.link-btn:active {
+    transform: scale(0.95);
+}
+
+/* ---------------- Gradient | Styles ------------------ */
+
+.grad-text {
+    background-image: var(--gradient1);
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.grad-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--white);
+    margin-top: 0.2em;
+    padding: 0.15em 0.2em;
+    border-radius: 0.2em;
+    position: relative;
+    z-index: 2;
+}
+
+.grad-bg::before {
+    content: "";
+    background-image: var(--gradient1);
+    width: 100%;
+    height: 100%;
+    padding: inherit;
+    border-radius: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.xy-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------- Launcher | Styles ------------------ */
+.launcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 20;
+}
+
+.launcher.load {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+header.animate .logo,
+.launcher.load .icon {
+    animation: slide-right-in 1s both, tilt-clock-10 1s both;
+}
+
+/* ---------------- Header | Styles ---------------- */
+header {
+    width: 100%;
+    padding: 1em 0;
+    box-shadow: 0 1em 3em transparent;
+    transition: background-color 0.1s ease-in-out;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+header.scrolling {
+    background-color: var(--white);
+    box-shadow: 0 1em 3em rgba(0, 0, 0, 0.1);
+}
+
+/* ------ Progress Bar | Styles ------ */
+header .progress {
+    background-color: var(--darkjunglegreen);
+    width: 100%;
+    height: 5px;
+    border-top: 1px solid rgba(18, 184, 174, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+}
+
+header .progress:not(.load) {
+    display: none;
+}
+
+header .progress .slider {
+    background-color: var(--mantis);
+    width: 1%;
+    height: 100%;
+    transition: width 0.25s ease-in-out;
+}
+
+header .menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a:not(.logo) {
+    padding: 0.5em;
+}
+
+/* ------ Navigation Links (Mobile) ------ */
+.menu-bar .page-title-mob {
+    font-size: 1.8em;
+    display: none;
+    cursor: pointer;
+}
+
+.menu-bar .page-title-mob.show .sym {
+    transform: translateY(10%) rotateX(120deg) scale(1.7);
+}
+
+article.bg-cover-mob,
+.media-player {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+article.bg-cover-mob.show {
+    display: block;
+}
+
+/* ------ Navigation Links ------ */
+.nav-links {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+.nav-links .link {
+    font-weight: 500;
+    color: var(--nickel);
+    padding: 0.5em;
+}
+
+body:not(.home) .nav-links>.link {
+    color: var(--silver);
+}
+
+header.scrolling .nav-links>.link {
+    color: var(--nickel);
+}
+
+header .menu-bar .nav-links .link.active {
+    font-weight: 600;
+    color: var(--lightseagreen);
+    border-bottom: 0.1em solid transparent;
+    transform: scale(1.025);
+}
+
+.nav-links .link:not(.active):hover {
+    color: var(--lightseagreen);
+}
+
+/* -------- Dropdown | Styles --------- */
+.nav-links .dropdown {
+    cursor: default;
+    position: relative;
+}
+
+.nav-links .dropdown .link.active {
+    font-weight: 500;
+}
+
+.nav-links .dropdown .dropdown-box {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--white);
+    width: max-content;
+    padding: 2em 1em 1em;
+    box-shadow: 0 1em 2em rgba(10, 26, 12, 0.2);
+    border-radius: 1em;
+}
+
+.nav-links .dropdown .dropdown-box.show {
+    display: flex;
+    position: absolute;
+    top: 100%;
+}
+
+.nav-links .dropdown-box .separator {
+    color: var(--azurex11webcolor);
+    width: 100%;
+}
+
+/* -------- Login (Btn) | Styles --------- */
+header a.login-btn,
+header a.logout-btn,
+.btn-placeholder {
+    font-weight: 500;
+    color: var(--lightseagreen);
+    padding: 0.5em 1.5em;
+    border: 0.1em solid var(--lightseagreen);
+    border-radius: 2em;
+}
+
+header a.hide {
+    display: none;
+}
+
+header a.logout-btn {
+    color: var(--violetred);
+    border-color: var(--violetred);
+}
+
+header a.login-btn:hover {
+    background-color: var(--lightseagreen);
+    color: var(--white);
+}
+
+header a.logout-btn:hover {
+    background-color: rgba(253, 80, 144, 0.15);
+    cursor: pointer;
+}
+
+.btn-placeholder {
+    display: none;
+    background-image: linear-gradient(to left, var(--nickel), var(--silver));
+    width: 5em;
+    height: 2em;
+    border: none;
+    border-radius: 2em;
+    transition: opacity 1s ease-in-out;
+    animation: linear-color-changer 3s infinite;
+}
+
+.btn-placeholder.show {
+    display: inline-block;
+}
+
+/* ---------------- Top-Container | Styles ---------------- */
+
+.top-container {
+    background: url("../../Images/backgrounds/home_00.jpg") no-repeat center/cover;
+    position: relative;
+}
+
+.top-container * {
+    position: relative;
+    z-index: 2;
+}
+
+.bg-cover {
+    background-image: linear-gradient(130deg, var(--white) 50%, rgba(255, 255, 255, 0.1));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+body:not(.home) .top-container .bg-cover {
+    background-image: linear-gradient(210deg, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0.1));
+}
+
+.top-container .wrapper {
+    padding: 8em 0;
+}
+
+.top-container .contents {
+    width: 86%;
+}
+
+.top-container h1 {
+    font-size: 4.5em;
+    line-height: 1.25em;
+    margin-bottom: 0;
+}
+
+.top-container .contents .placeholder {
+    color: transparent;
+}
+
+.top-container.animate .contents h1 .green {
+    display: inline-block;
+    animation: rotate-X-clock 2.5s both;
+}
+
+.top-container.animate .contents h1 .green.hide {
+    animation: 2.5s both;
+}
+
+.top-container .contents p {
+    font-size: 1em;
+    line-height: 1.75em;
+    width: 75%;
+    max-width: 1200px;
+    margin: 2em 0;
+}
+
+body:not(.home) .top-container h1,
+body:not(.home) .top-container .statement {
+    color: var(--white);
+}
+
+/* --------- Search-Box | Styles -------- */
+#search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    width: 60%;
+    max-width: 800px;
+    margin: 3em 0;
+    padding: 0.25em;
+    box-shadow: 0.5em 4em 6em rgba(0, 0, 0, 0.2);
+    border: 0.1em solid transparent;
+    border-radius: 0.3em;
+    position: relative;
+}
+
+#search-box:focus-within {
+    border-color: var(--mantis);
+}
+
+#search-box input {
+    font-size: 1.1em;
+    border: none;
+}
+
+.hint {
+    font-weight: 500;
+    text-align: right;
+    display: none;
+    color: var(--fieryrose);
+    width: 100%;
+    padding: 0.1em 0.15em;
+    border-radius: 0 0 0.2em 0.2em;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.empty+.hint {
+    display: inline-block;
+}
+
+#search-box .search-bar {
+    letter-spacing: 0.05em;
+    width: 100%;
+    padding: 0 1em;
+    outline: none;
+}
+
+#search-box .submit-btn {
+    background-color: var(--lightseagreen);
+    color: var(--white);
+    padding: 1em 2em;
+    border-radius: inherit;
+}
+
+#search-box .submit-btn:hover {
+    background-color: rgba(18, 184, 174, 0.9);
+    cursor: pointer;
+}
+
+/* ---------------- About-Container | Styles ---------------- */
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 5em rgba(0, 0, 0, 0.1);
+}
+
+/* ------------- Stats-Container | Styles ------------ */
+.about-container .stats-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    z-index: 2;
+}
+
+.about-container .stats-content::before {
+    content: "";
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    padding: 5em 0 12em;
+    border-bottom: 0.15em solid var(--silver);
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -5em;
+    z-index: 1;
+}
+
+.stats-content .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: auto;
+    padding: 0 3em;
+    position: relative;
+    z-index: 3;
+}
+
+.stats-content .badge p {
+    font-size: 0.9em;
+}
+
+/* -------------- Mission-Container | Styles ------------ */
+.about-container .mission-content {
+    padding: 8em 0;
+}
+
+.mission-content .first-child,
+.mission-content .inner-child,
+.mission-content .second-child {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+    overflow: hidden;
+}
+
+.mission-content .title {
+    margin-bottom: 0.25em;
+}
+
+.mission-content img {
+    width: 22.5em;
+    height: 27.5em;
+}
+
+.mission-content.animate .thumb-img1 {
+    animation: slide-right-in 1s both;
+}
+
+.mission-content.animate .thumb-img2 {
+    animation: slide-up-in 1s both;
+}
+
+.mission-content .inner-child {
+    flex-direction: column;
+    gap: 0;
+}
+
+.site-btn {
+    font-weight: 500;
+    display: inline-block;
+    background-color: var(--lightseagreen);
+    color: var(--white);
+    margin: 2em 0;
+    padding: 1em 2.5em;
+    border: 0.1em solid var(--lightseagreen);
+    border-radius: 2em;
+}
+
+.site-btn:hover {
+    background-color: transparent;
+    color: var(--lightseagreen);
+}
+
+/* ---------------- Discover-Container | Styles ---------------- */
+
+.discover-container {
+    background-color: rgba(10, 26, 12, 0.7);
+    position: relative;
+}
+
+.discover-container p {
+    color: var(--silver)
+}
+
+.discover-container .inner-child {
+    color: var(--white);
+    padding: 6em 0;
+}
+
+.discover-container .inner-child .contents {
+    width: 65%;
+}
+
+.discover-container .inner-child .title {
+    margin-bottom: 0;
+}
+
+.discover-container .inner-child .statement {
+    width: 70%;
+    margin: 1.5em 0;
+}
+
+.discover-container .bg-cover.image {
+    background: url("../../Images/backgrounds/home_01.webp") no-repeat right/cover;
+    z-index: -1;
+}
+
+/* ---------------- Partners-Container | Styles ---------------- */
+
+.partners-container {
+    text-align: center;
+    padding: 6em 0;
+}
+
+.partners-container .title {
+    margin-bottom: 0.5em;
+}
+
+.partners-container .brands-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.brands-slider::before,
+.brands-slider::after {
+    content: "";
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    height: 100%;
+    width: 25%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.brands-slider::before {
+    left: -0.1em;
+    top: 0;
+}
+
+.brands-slider::after {
+    right: -0.1em;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+/* ------------ Marquee-Infinite (Scrolling) | Styles --------- */
+.brands-slider .marquee-badges {
+    display: flex;
+    justify-content: space-between;
+    width: calc(15em * 26);
+    margin: 0;
+    animation: marquee-scroller 26s linear infinite;
+}
+
+.brands-slider .marquee-badges img {
+    width: 15em;
+    padding: 1.5em;
+    cursor: default;
+    transition: 0.5s;
+}
+
+.brands-slider .marquee-badges:hover {
+    animation-play-state: paused;
+}
+
+.brands-slider .marquee-badges img:hover {
+    transform: scale(0.85)
+}
+
+/* ---------------- Contact-Container | Styles ---------------- */
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8em;
+    position: relative;
+}
+
+.contact-container .bg-cover {
+    background-color: var(--silver);
+    background-image: none;
+    width: 50%;
+}
+
+.contact-container .bg-cover.left {
+    left: 0;
+    transform: skewX(5deg) skewY(5deg);
+}
+
+.contact-container .bg-cover.right {
+    right: 0;
+    transform: skewX(-5deg) skewY(-5deg);
+    overflow: hidden;
+}
+
+.contact-container .bg-cover.right img {
+    width: 15em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.contact-container .bg-cover.right img.animate {
+    animation: slide-left-in 1s both;
+}
+
+.contact-container .bg-cover.center {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contact-container .contact-content {
+    width: 60vw;
+    margin: 0;
+    padding: 4em 6em;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-content .title {
+    font-size: 2.5em;
+}
+
+.contact-content .statement {
+    color: var(--darkjunglegreen);
+}
+
+/* ---------------- Footer | Styles ---------------- */
+footer {
+    background-color: var(--darkjunglegreen);
+    color: var(--silver);
+    padding: 2em 0;
+    position: relative;
+}
+
+footer p {
+    color: var(--silver);
+}
+
+footer a,
+footer small {
+    color: var(--silver);
+    transition: padding 300ms ease-in-out;
+}
+
+footer .infos {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+}
+
+/* --- Footer-Logo | Styles --- */
+footer .infos .bottominfo-links,
+footer .infos h3 {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+
+footer .infos .site-logo {
+    font-size: 1.4em;
+    display: inline-block;
+}
+
+footer .infos p {
+    font-size: 0.95em;
+}
+
+/* -- Social-link | Styles -- */
+footer .social-links {
+    margin: 2em 0;
+}
+
+footer .social-links a {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+footer .social-links img {
+    box-sizing: content-box;
+    background-color: var(--silver);
+    width: 1.3em;
+    padding: 0.2em;
+    border: 0.1em solid transparent;
+    border-radius: 10%;
+}
+
+footer .social-links img.highlight {
+    background-color: var(--lightseagreen);
+}
+
+footer .social-links img:hover {
+    background-color: var(--lightseagreen);
+    border-color: var(--lightseagreen);
+    transform: scale(1.2);
+}
+
+/* --- Footer-Links | Styles --- */
+footer .related-links {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+}
+
+footer .related-links a {
+    display: block;
+    margin-top: 0.5em;
+    padding: 0 0.5em 0 0;
+}
+
+footer .related-links a[href]:hover,
+a.grad-link:hover {
+    background-image: var(--gradient1);
+    color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    padding: 0 0 0 0.5em;
+    transition: 300ms;
+}
+
+footer .related-links a.address {
+    margin-bottom: 1em;
+}
+
+/* --- Footer-copyrights | Styles --- */
+.copyrights {
+    text-align: center;
+    margin-top: 3em;
+}
+
+.copyrights .separator {
+    color: var(--nickel);
+    margin-bottom: 1em;
+}
+
+.copyrights .site-name {
+    color: var(--mantis);
+}
+
+.copyrights .designer:hover {
+    background-image: var(--gradient2);
+    text-shadow: 0 1.25em 0.5em var(--lightseagreen);
+}
+
+.copyrights .designer:active {
+    color: var(--lightseagreen);
+}
+
+/* --------------- Scroll to Top (Button) | Styles -------------- */
+
+.scroll-to-top {
+    font-size: 1.4rem;
+    background-color: rgba(120, 202, 91, 0.6);
+    color: var(--darkjunglegreen);
+    padding: 0.5rem 1rem;
+    border-radius: 2.5rem;
+    z-index: 8;
+    transition: background-color 300ms ease-in-out;
+    position: fixed;
+    bottom: 5%;
+    right: 2.5%;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--mantis);
+}
+
+.scroll-to-top:active {
+    color: var(--orangeweb);
+}
+
+/* --------------------- Media (Player) | Styles ---------------------- */
+.media-player {
+    z-index: 15;
+}
+
+.media-player.open {
+    display: block;
+    animation: fade-in 0.5s both;
+}
+
+.media-player .media {
+    align-items: flex-start;
+    gap: 1em;
+    width: 60em;
+    height: 30em;
+    margin: auto;
+    position: fixed;
+    inset: 0;
+}
+
+.media-player .media .video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 1em;
+}
+
+.close-btn {
+    font-size: 3em;
+    line-height: 1em;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--lightseagreen);
+}
+
+.close-btn:active {
+    color: var(--fieryrose);
+}
+
+/* --------- Loading Spinner | Styles -------- */
+.spinner {
+    width: 3em;
+    height: 3em;
+    margin: 0 auto;
+    border: 0.2em solid var(--lightseagreen);
+    border-left-color: var(--white);
+    border-right-color: var(--white);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate-clock 0.5s linear infinite;
+    animation-play-state: paused;
+}
+
+.spinner.show {
+    animation-play-state: running;
+}
